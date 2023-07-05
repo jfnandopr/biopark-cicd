@@ -1,5 +1,5 @@
 grailsservers:
   hosts:
-    ec2-3-83-96-32.compute-1.amazonaws.com
+    ec2-44-211-150-161.compute-1.amazonaws.com
   vars:
     ansible_user: ubuntu

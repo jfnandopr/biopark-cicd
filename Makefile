@@ -6,12 +6,12 @@ docker-build:
 start:
 	docker-compose -f docker-compose.yml up -d
 
-infra-apply:
+cloud-create:
 	cd terraform && terraform init
 	cd terraform && terraform apply
 
-infra-destroy:
+cloud-destroy:
 	cd terraform && terraform destroy
 
-infra-install:
+cloud-install:
 	cd ansible && ansible-playbook -i inventory.yaml playbook.yaml
