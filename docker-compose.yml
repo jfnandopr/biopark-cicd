@@ -1,0 +1,47 @@
+services:
+  web:
+    image: jfnandopr/my-grails-app
+    restart: always
+    container_name: web
+    depends_on:
+      - db
+    ports:
+      - 80:8080
+    networks:
+      - frontend
+      - backend
+    environment:
+      DB_HOST: db
+      DB_PASSWORD: 123456
+
+  db:
+    image: mysql
+    restart: always
+    container_name: db
+    environment:
+      MYSQL_DATABASE: my-grails-app
+      MYSQL_ROOT_PASSWORD: 123456
+    ports:
+      - 3306:3306
+    volumes:
+      - db:/var/lib/mysql
+    networks:
+      - backend
+      
+  adminer:
+    image: adminer
+    restart: always
+    container_name: adminer
+    depends_on:
+      - db
+    ports:
+      - 8088:8080
+    networks:
+      - backend
+
+volumes:
+  db:
+
+networks:
+  frontend:
+  backend:
