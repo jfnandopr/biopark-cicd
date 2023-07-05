@@ -18,17 +18,17 @@
           sudo apt-get update
           sudo apt-get -yq install docker-ce docker-ce-cli containerd.io docker-compose-plugin docker-compose
 
-    # - name: Copiar docker-compose.yml
-    #   copy:
-    #     src: ../docker-compose.yml
-    #     dest: ~/
+    - name: Copiar docker-compose.yml
+      copy:
+        src: ../docker-compose.yml
+        dest: ~/
 
-    # - name: Executar docker-compose.yml
-    #   shell:
-    #     cmd: sudo docker-compose up -d
-    #   register: output
+    - name: Executar docker-compose.yml
+      shell:
+        cmd: sudo docker-compose up -d
+      register: output
 
-    # - name: Output
-    #   debug:
-    #     var: output
+    - name: Output
+      debug:
+        var: output
         

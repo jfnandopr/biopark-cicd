@@ -7,6 +7,7 @@ Módulo Engenharia de Software para Nuvem
 
 ```sh
 make docker-build
+make docker-deploy
 make start
 make cloud-create
 make cloud-destroy
