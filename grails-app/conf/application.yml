@@ -127,7 +127,7 @@ environments:
             driverClassName: com.mysql.jdbc.Driver
             dialect: org.hibernate.dialect.MySQL5InnoDBDialect
             username: ${DB_USER:root}
-            password: ${DB_PASSWORD:password}
+            password: ${DB_PASSWORD:123456}
             properties:
                 connectionTimeout: 30000
                 idleTimeout: 600000
