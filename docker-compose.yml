@@ -21,6 +21,7 @@ services:
     environment:
       MYSQL_DATABASE: my-grails-app
       MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_ROOT_HOST: '%'
     volumes:
       - db:/var/lib/mysql
     networks:
