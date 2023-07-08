@@ -60,7 +60,7 @@ jobs:
     needs: release
     strategy:
       matrix:
-        instance-id: ['i-017258787979ba950']
+        instance-id: ['i-065bf757b81fe517f']
         
     steps:
       - name: Install AWS CLI 
