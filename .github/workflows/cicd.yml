@@ -77,9 +77,9 @@ jobs:
           aws-region: sa-east-1
           
       - name: Deploy to AWS
-        run: |
-          aws ssm send-command \
-          --document-name "AWS-RunShellScript" \
-          --instance-ids ${{ matrix.instance-id }} \
-          --parameters commands="cd /home/ubuntu && sudo docker-compose up -d" \
-          --region sa-east-1 --output text
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ec2-54-233-243-169.sa-east-1.compute.amazonaws.com
+          username: ubuntu
+          key: ${{ secrets.AWS_ECS_SSH_KEY }}
+          script: cd /home/ubuntu && sudo docker-compose up -d
